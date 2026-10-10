@@ -1,0 +1,264 @@
+{
+  "hospital": {
+    "name": "BEDFLOW",
+    "unit": "Hospital Demonstrativo",
+    "wing": "Ala de Internação"
+  },
+  "rooms": [
+  {
+    "id": 101,
+    "name": "Privativo 101",
+    "type": "PRIVATIVO",
+    "floor": 1,
+    "position": [-6, 0, -6],
+    "bedIds": [1, 15]
+  },
+  {
+    "id": 102,
+    "name": "Duplo 102",
+    "type": "DUPLO",
+    "floor": 1,
+    "position": [0, 0, -6],
+    "bedIds": [2, 3]
+  },
+  {
+    "id": 103,
+    "name": "Enfermaria 103",
+    "type": "ENFERMARIA",
+    "floor": 1,
+    "position": [6, 0, -6],
+    "bedIds": [4, 5, 6, 7, 13, 14]
+  },
+  {
+    "id": 104,
+    "name": "UTI 104",
+    "type": "UTI",
+    "floor": 1,
+    "position": [-6, 0, 2],
+    "bedIds": [8, 9, 10, 11]
+  },
+  {
+    "id": 105,
+    "name": "Isolamento 105",
+    "type": "ISOLAMENTO",
+    "floor": 1,
+    "position": [0, 0, 2],
+    "bedIds": [12, 16]
+  }
+],
+  "beds": [
+    {
+      "id": 1,
+      "roomId": 101,
+      "room": "Privativo 101",
+      "type": "CLINICO",
+      "position": [-8, 0, -5],
+      "status": "OCUPADO",
+      "dailyCost": 850,
+      "patient": {
+        "id": 1001,
+        "name": "Mariana Costa",
+        "admissionDate": "2026-10-08",
+        "reason": "Recuperação pós-operatória",
+        "expectedDischargeDate": "2026-10-13",
+        "healthPlan": {
+          "name": "Plano Empresarial",
+          "type": "EMPRESARIAL",
+          "isHolder": true
+        }
+      }
+    },
+    {
+      "id": 2,
+      "roomId": 102,
+      "room": "Duplo 102",
+      "type": "CLINICO",
+      "position": [-2, 0, -5],
+      "status": "OCUPADO",
+      "dailyCost": 480,
+      "patient": {
+        "id": 1002,
+        "name": "Carlos Mendes",
+        "admissionDate": "2026-10-06",
+        "reason": "Tratamento clínico",
+        "expectedDischargeDate": "2026-10-12",
+        "healthPlan": {
+          "name": "Plano Familiar",
+          "type": "FAMILIAR",
+          "isHolder": false
+        }
+      }
+    },
+    {
+      "id": 3,
+      "roomId": 102,
+      "room": "Duplo 102",
+      "type": "CLINICO",
+      "position": [-2, 0, -5],
+      "status": "LIVRE",
+      "dailyCost": 480,
+      "patient": null
+    },
+    {
+      "id": 4,
+      "roomId": 103,
+      "room": "Enfermaria 103",
+      "type": "CIRURGICO",
+      "position": [5, 0, -5],
+      "status": "OCUPADO",
+      "dailyCost": 320,
+      "patient": {
+        "id": 1003,
+        "name": "Ana Ribeiro",
+        "admissionDate": "2026-10-09",
+        "reason": "Recuperação cirúrgica",
+        "expectedDischargeDate": null,
+        "healthPlan": {
+          "name": "Plano Individual",
+          "type": "INDIVIDUAL",
+          "isHolder": true
+        }
+      }
+    },
+    {
+      "id": 5,
+      "roomId": 103,
+      "room": "Enfermaria 103",
+      "type": "CLINICO",
+      "position": [5, 0, -5],
+      "status": "OCUPADO",
+      "dailyCost": 320,
+      "patient": {
+        "id": 1004,
+        "name": "Roberto Lima",
+        "admissionDate": "2026-10-05",
+        "reason": "Observação clínica",
+        "expectedDischargeDate": "2026-10-11",
+        "healthPlan": {
+          "name": "Plano Empresarial",
+          "type": "EMPRESARIAL",
+          "isHolder": false
+        }
+      }
+    },
+    {
+      "id": 6,
+      "roomId": 103,
+      "room": "Enfermaria 103",
+      "type": "CLINICO",
+      "position": [5, 0, -5],
+      "status": "HIGIENIZACAO",
+      "dailyCost": 320,
+      "patient": null
+    },
+    {
+      "id": 7,
+      "roomId": 103,
+      "room": "Enfermaria 103",
+      "type": "CLINICO",
+      "position": [5, 0, -5],
+      "status": "LIVRE",
+      "dailyCost": 320,
+      "patient": null
+    },
+    {
+      "id": 8,
+      "roomId": 104,
+      "room": "UTI 104",
+      "type": "INTENSIVO",
+      "position": [-3, 0, 5],
+      "status": "OCUPADO",
+      "dailyCost": 1800,
+      "patient": {
+        "id": 1005,
+        "name": "Paciente UTI 01",
+        "admissionDate": "2026-10-07",
+        "reason": "Cuidados intensivos",
+        "expectedDischargeDate": null,
+        "healthPlan": {
+          "name": "Plano Empresarial",
+          "type": "EMPRESARIAL",
+          "isHolder": true
+        }
+      }
+    },
+    {
+      "id": 9,
+      "roomId": 104,
+      "room": "UTI 104",
+      "type": "INTENSIVO",
+      "position": [-3, 0, 5],
+      "status": "OCUPADO",
+      "dailyCost": 1800,
+      "patient": {
+        "id": 1006,
+        "name": "Paciente UTI 02",
+        "admissionDate": "2026-10-08",
+        "reason": "Monitoramento intensivo",
+        "expectedDischargeDate": null,
+        "healthPlan": {
+          "name": "Plano Particular",
+          "type": "PARTICULAR",
+          "isHolder": null
+        }
+      }
+    },
+    {
+      "id": 10,
+      "roomId": 104,
+      "room": "UTI 104",
+      "type": "INTENSIVO",
+      "position": [-3, 0, 5],
+      "status": "HIGIENIZACAO",
+      "dailyCost": 1800,
+      "patient": null
+    },
+    {
+      "id": 11,
+      "roomId": 104,
+      "room": "UTI 104",
+      "type": "INTENSIVO",
+      "position": [-3, 0, 5],
+      "status": "LIVRE",
+      "dailyCost": 1800,
+      "patient": null
+    },
+    {
+      "id": 12,
+      "roomId": 105,
+      "room": "Isolamento 105",
+      "type": "CLINICO",
+      "position": [5, 0, 5],
+      "status": "OCUPADO",
+      "dailyCost": 1100,
+      "patient": {
+        "id": 1007,
+        "name": "Paciente Isolamento 01",
+        "admissionDate": "2026-10-09",
+        "reason": "Precaução de isolamento",
+        "expectedDischargeDate": null,
+        "healthPlan": null
+      }
+    },
+    {
+      "id": 15,
+      "roomId": 101,
+      "room": "Privativo 101",
+      "type": "CLINICO",
+      "position": [-8, 0, -5],
+      "status": "MANUTENCAO",
+      "dailyCost": 850,
+      "patient": null
+    },
+    {
+      "id": 16,
+      "roomId": 105,
+      "room": "Isolamento 105",
+      "type": "CLINICO",
+      "position": [5, 0, 5],
+      "status": "LIVRE",
+      "dailyCost": 1100,
+      "patient": null
+    }
+  ]
+}
