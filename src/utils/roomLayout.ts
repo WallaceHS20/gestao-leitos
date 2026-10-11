@@ -6,7 +6,6 @@ export function getStandardizedBedPosition(
   room: Room,
 ): [number, number, number] {
   const [roomX, roomY, roomZ] = room.position;
-  const roomSize = 5.2; // Tamanho fixo do quarto quadrado
 
   // 1 Leito (Privativo / Isolamento): Centralizado perfeitamente
   if (totalBedsInRoom === 1) {
