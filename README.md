@@ -1,75 +1,110 @@
-# React + TypeScript + Vite
+# 🏥 BEDFLOW 3D
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Sistema de gerenciamento e visualização de leitos hospitalares em 3D.**
 
-Currently, two official plugins are available:
+O BEDFLOW 3D é uma aplicação web que propõe uma maneira mais visual e intuitiva de acompanhar a ocupação hospitalar. Por meio de um ambiente tridimensional interativo, o sistema permite visualizar a estrutura do hospital, seus quartos e leitos, facilitando a identificação de situações que exigem atenção da equipe.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Funcionalidades
 
-## React Compiler
+- 🏨 **Visualização 3D do hospital:** representação interativa da estrutura hospitalar.
+- 🛏️ **Gerenciamento visual de leitos:** visualização dos leitos distribuídos pelos quartos.
+- 🎯 **Seleção interativa:** seleção de leitos e quartos diretamente na cena 3D.
+- 📊 **Identificação de status:** representação visual dos estados dos leitos, incluindo higienização.
+- 👩‍⚕️ **Simulação de profissionais:** representação de profissionais circulando pelo ambiente hospitalar.
+- 🏢 **Ambiente externo:** representação da área externa, com estacionamento, veículos, vegetação e construções.
+- 🖱️ **Navegação tridimensional:** possibilidade de explorar o ambiente por meio de controles de câmera.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+| Tecnologia | Aplicação |
+|---|---|
+| React | Construção da interface |
+| TypeScript | Tipagem estática e segurança no desenvolvimento |
+| Vite | Ambiente de desenvolvimento e build |
+| Three.js | Renderização gráfica 3D |
+| React Three Fiber | Integração do Three.js com React |
+| React Three Drei | Recursos auxiliares para cenas 3D |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📁 Estrutura do projeto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+├── components/
+│   └── hospital/
+│       ├── HospitalScene.tsx
+│       ├── HospitalFloor.tsx
+│       ├── HospitalRoom.tsx
+│       ├── HospitalBed.tsx
+│       ├── HospitalStaff.tsx
+│       └── HospitalExterior.tsx
+├── data/
+│   └── data.json
+└── types/
+    └── bed.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+*Observação: a estrutura acima representa os arquivos principais conhecidos do módulo 3D; outras pastas e componentes da aplicação podem existir.*
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Como executar o projeto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Pré-requisitos
 
+- Node.js instalado.
+- npm instalado.
+
+### 1. Clone o repositório
+
+```bash
+git clone URL_DO_REPOSITORIO
 ```
+
+### 2. Entre na pasta do projeto
+
+```bash
+cd NOME_DA_PASTA
+```
+
+### 3. Instale as dependências
+
+```bash
+npm install
+```
+
+### 4. Execute em modo de desenvolvimento
+
+```bash
+npm run dev
+```
+
+Acesse o endereço local exibido pelo Vite no terminal, geralmente `http://localhost:5173`.
+
+## 🧩 Organização e arquitetura
+
+O projeto utiliza componentes React independentes para representar os elementos do ambiente hospitalar.
+
+- **HospitalScene:** coordena a cena 3D, a iluminação, a câmera e os elementos do hospital.
+- **HospitalRoom:** representa os quartos e suas estruturas.
+- **HospitalBed:** representa os leitos e suas interações.
+- **HospitalStaff:** representa os profissionais no ambiente.
+- **HospitalExterior:** constrói os elementos externos do hospital.
+- **HospitalFloor:** representa a base do ambiente.
+- **data.json:** armazena os dados utilizados na representação do cenário.
+- **bed.ts:** define os tipos utilizados para quartos e leitos.
+
+Essa separação facilita a manutenção, a reutilização de componentes e a evolução das funcionalidades.
+
+## 🎯 Objetivo
+
+O BEDFLOW 3D busca tornar a visualização da ocupação hospitalar mais intuitiva por meio de uma representação tridimensional interativa, combinando desenvolvimento web moderno, visualização espacial e organização de informações.
+
+## 🔮 Possíveis evoluções
+
+- Filtros por setor, quarto e status do leito.
+- Indicadores de ocupação e disponibilidade.
+- Histórico de movimentações dos leitos.
+- Melhorias de acessibilidade e responsividade.
+- Animações e interações adicionais para otimizar a experiência dos usuários.
+
+---
+
+**BEDFLOW 3D** — Uma visão mais intuitiva da gestão hospitalar.
